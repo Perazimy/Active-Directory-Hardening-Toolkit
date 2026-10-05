@@ -114,7 +114,7 @@ All tests below were executed and captured directly from the live VirtualBox lab
 ### Test 1: Tiered OU Hierarchy in Active Directory Users & Computers
 Inspected the Active Directory database partition (`corp.local`) via Microsoft Management Console (`dsa.msc`):
 
-![Tiered OU Architecture](screenshots/week2/01_Tiered_OU_Architecture.png)
+![Tiered OU Architecture](Screenshots/01_Tiered_OU_Architecture.png)
 *Figure 1: Active Directory Users and Computers displaying the `_CORP_INFRASTRUCTURE` container, administrative segregation (Admin_Accounts, Servers, Service_Accounts, Standard_Users, Workstations).*
 
 ---
@@ -129,7 +129,7 @@ Executed `C:\Lab\Create-Users.ps1` in elevated PowerShell on `CORP-DC01`:
 [SUCCESS] Created user neze in HumanResources
 ```
 
-![PowerShell Bulk User Creation](screenshots/week2/02_PowerShell_Bulk_Users.png)
+![PowerShell Bulk User Creation](Screenshots/02_PowerShell_Bulk_Users.png)
 *Figure 2: Execution of `Create-Users.ps1` in elevated PowerShell showing automated creation of domain accounts from CSV.*
 
 ---
@@ -137,7 +137,7 @@ Executed `C:\Lab\Create-Users.ps1` in elevated PowerShell on `CORP-DC01`:
 ### Test 3: Active Directory Users and Computers Department Verification
 Verified that created accounts were correctly positioned within departmental sub-OUs:
 
-![ADUC Department User Verification](screenshots/week2/03_ADUC_User_Created.png)
+![ADUC Department User Verification](Screenshots/03_ADUC_User_Created.png)
 *Figure 3: Active Directory Users and Computers showing user Emeka Okoro provisioned within `_CORP_INFRASTRUCTURE > Standard_Users > Engineering`.*
 
 ---
@@ -152,7 +152,7 @@ HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\DNSClient
     EnableMulticast    REG_DWORD    0x0
 ```
 
-![Registry LLMNR Disabled](screenshots/week2/04_Registry_LLMNR_Disabled.png)
+![Registry LLMNR Disabled](Screenshots/04_Registry_LLMNR_Disabled.png)
 *Figure 4: Direct registry query confirming `EnableMulticast` is set to `0x0` (False/Disabled), proving enforcement of `Hardening-Disable-LLMNR` and mitigation of Responder poisoning.*
 
 ---
@@ -171,7 +171,7 @@ USER SETTINGS
         Hardening-ScreenLock
 ```
 
-![Client GPO Verification](screenshots/week2/05_Client_gpresult_ScreenLock.png)
+![Client GPO Verification](Screenshots/05_Client_gpresult_ScreenLock.png)
 *Figure 5: Verification of applied User Group Policy Objects on CORP-CLO1 confirming active enforcement of 10-minute inactivity screen lock for user Chukwubuzor E. Perazim.*
 
 ---
@@ -188,7 +188,7 @@ ComputerName  DistinguishedName                                           Passwo
 CORP-CLO1     CN=CORP-CLO1,OU=Workstations,OU=_CORP_INFRASTRUCTURE,DC=... 2VT{)NJv+Apke;+v  11/4/2026 2:09:20 PM
 ```
 
-![LAPS Password Dual Verification](screenshots/week2/06_LAPS_Password_Verification.png)
+![LAPS Password Dual Verification](Screenshots/06_LAPS_Password_Verification.png)
 *Figure 6: Dual verification showing matching 16-character complex password (`2VT{)NJv+Apke;+v`) with 30-day rotation expiration in both PowerShell and the LAPS UI console.*
 
 ---
@@ -211,7 +211,7 @@ Tunde Bakare tbakare        Operations     Never Logged On
 Ngozi Eze    neze           HumanResources Never Logged On
 ```
 
-![Audit Inactive Accounts Console and File Explorer](screenshots/week2/07_Audit_InactiveAccounts_Console.png)
+![Audit Inactive Accounts Console and File Explorer](Screenshots/07_Audit_InactiveAccounts_Console.png)
 *Figure 7: Execution of `Audit-InactiveAccounts.ps1` displaying the detected stale accounts in console and verifying generated files in C:\Lab.*
 
 ---
@@ -230,5 +230,5 @@ Ngozi Eze    neze           HumanResources Never Logged On
 * **Engineer:** Chukwubuzor Perazim
 * **Specialization:** Network Security, Windows Server Infrastructure & Command and Control (C3) Systems
 * **Location:** Warri, Delta State, Nigeria
-* **LinkedIn:** [linkedin.com/in/ChukwubuzorPerazim](https://www.linkedin.com/in/ChukwubuzorPerazim)
-* **GitHub:** [github.com/ChukwubuzorPerazim](https://github.com/ChukwubuzorPerazim)
+* **LinkedIn:** [linkedin.com/in/ChukwubuzorPerazim](www.linkedin.com/in/chukwubuzor-perazim-590a5519a)
+* **GitHub:** [github.com/ChukwubuzorPerazim](https://github.com/Perazimy)
